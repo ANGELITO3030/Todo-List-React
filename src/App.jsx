@@ -8,7 +8,7 @@ export default function App() {
   const [input, setInput] = useState("");
 
 
-  const agregarTarea = () => {
+  const   agregarTarea = () => {
 
     if (input.trim()) {
       setTareas([...tareas, { id: Date.now(), text: input.trim(), completed: false }]);
