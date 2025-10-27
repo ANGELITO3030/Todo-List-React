@@ -31,6 +31,7 @@ export default function App() {
     setTareas(tareas.filter((tarea) => tarea.id !== id));
 
   }
+  <h1>HOLA TUUUUUUU</h1>
 
   return (
     <div className="max-w-md mx-auto mt-10 p-2  rounded shadow">
