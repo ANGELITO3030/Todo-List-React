@@ -29,9 +29,15 @@ export default function App() {
 
   const eliminarTarea = (id) => {
     setTareas(tareas.filter((tarea) => tarea.id !== id));
-
   }
-  <h1>HOLA TUUUUUUU</h1>
+
+  const editarTarea = (id, nuevoTexto) => {
+    setTareas(
+      tareas.map((tarea) =>
+        tarea.id === id ? { ...tarea, text: nuevoTexto } : tarea
+      )
+    );
+  }
 
   return (
     <div className="max-w-md mx-auto mt-10 p-2  rounded shadow">
@@ -42,7 +48,7 @@ export default function App() {
       </div>
 
       <div className="space-y-2 ">
-        {tareas.map((tarea) => (<TodoItem key={tarea.id} tarea={tarea} toggleCompleted={toggleCompleted} eliminarTarea={eliminarTarea} />))}
+        {tareas.map((tarea) => (<TodoItem key={tarea.id} tarea={tarea} toggleCompleted={toggleCompleted} eliminarTarea={eliminarTarea} editarTarea={editarTarea} />))}
       </div>
 
     </div>
